@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
 :root {
     --primary: #06A3DA;
     --secondary: #34AD54;
@@ -153,6 +158,16 @@ h6,
 .navbar-dark .navbar-toggler {
     color: var(--primary) !important;
     border-color: var(--primary) !important;
+}
+
+.navbar-brand img{
+    width:5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    /* height:3rem; */
+}
+#navbar-logo img{
+    width:8rem;
 }
 
 @media (max-width: 991.98px) {
@@ -387,6 +402,37 @@ h6,
     box-shadow: 0 0 30px #DDDDDD;
 }
 
+/* enquiry section */
+.call_btn#call {
+    background: #02619e;
+    bottom: 110px;
+}
+.call_btn {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 26px;
+    z-index: 99;
+    border-radius: 100%;
+    transition: 0.3s ease-in-out;
+    left: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.call_btn, .send-btn {
+    color: #fff;
+    cursor: pointer;
+}
+.call_btn#whatsapp {
+    background: #01e675;
+    bottom: 50px;
+    color:#fff;
+}
 
 /*** Team ***/
 .team-item {
@@ -489,4 +535,140 @@ h6,
     .footer-about {
         margin-bottom: -75px;
     }
+}
+
+/* enquiry starts */
+
+.enquiry-popup{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1099;
+	background-color:rgba(212, 212, 212, 0.6);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.enquiry-popup.show{
+	visibility:visible;
+	opacity: 1;
+}
+.enquiry-popup .box{
+	background-color:#ffffff;
+	width: 750px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 0;
+	margin-left: 50px;
+	transition: all 1s ease;
+
+}
+.enquiry-popup.show .box{
+	opacity: 1;
+	margin-left: 0;
+}
+.enquiry-popup .box .img-area{
+	flex:0 0 50%;
+	max-width: 50%;
+	position: relative;
+	overflow: hidden;
+	padding:30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.enquiry-popup .box .img-area h1{
+	font-size: 30px;
+}
+.enquiry-popup .box .img-area .img{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	 
+	background-size: cover;
+	background-position: center;
+	animation: zoomInOut 7s linear infinite;
+	z-index: -1;
+
+}
+@keyframes zoomInOut{
+	0%,100%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+}
+.enquiry-popup .box .form{
+	flex:0 0 50%;
+	max-width: 50%;
+	padding:40px 30px;
+}
+
+.enquiry-popup .box .form h1{
+	color:#000000;
+	font-size: 30px;
+	margin:0 0 30px;
+}
+.enquiry-popup .box .form .form-control{
+	/* height: 45px; */
+	margin-bottom: 20px;
+	padding: 0.5rem;
+	width: 100%;
+	border:none;
+	border-bottom:1px solid #cccccc;
+	font-size: 15px;
+	color:#000000;
+}
+.enquiry-popup .box .form .form-control:focus{
+	outline: none;
+}
+.enquiry-popup .box .form label{
+	font-size: 15px;
+	color:#555555;
+}
+.enquiry-popup .box .form .btn{
+	width: 100%;
+	background-color: #06A3DA;
+	margin-top:40px;
+	height: 45px;
+	border:none;
+	border-radius: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
+	color:#ffffff;
+	cursor: pointer;
+}
+.enquiry-popup .box .form .btn:focus{
+	outline: none;
+}
+
+.enquiry-popup .box .form .close{
+	position: absolute;
+	right: 10px;
+	top:0px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+	.enquiry-popup .box{
+		width: calc(100% - 30px);
+	}
+	.enquiry-popup .box .img-area{
+		display: none;
+	}
+	.enquiry-popup .box .form{
+		flex: 0 0 100%;
+        max-width: 100%;
+	}
 }
