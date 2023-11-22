@@ -483,16 +483,17 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                        <form>
+                        <form action="https://formspree.io/f/xnqkykgr"
+                        method="POST">
                             <div class="row g-3">
                                 <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" name="name" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email"name="email" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                    <select class="form-select bg-light border-0" style="height: 55px;" name="select">
                                         <option selected>Select A Service</option>
                                         <option value="1">Service 1</option>
                                         <option value="2">Service 2</option>
@@ -500,7 +501,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
+                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message" name="message"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
@@ -745,20 +746,20 @@
          <div class="form">
              <div class="close">&times;</div>
              <h1>Connect With Us</h1>
-             <form>
+             <form action="https://formspree.io/f/xnqkykgr" method="POST">
                  <div class="form-group">
-                     <input type="text" placeholder="Enter your Name" class="form-control">
+                     <input type="text" placeholder="Enter your Name" name="name" id="Name" class="form-control">
                  </div>
                  <div class="form-group">
-                     <input type="text" placeholder="Enter your Email" class="form-control">
+                     <input type="text" placeholder="Enter your Email" name="email" id="Email" class="form-control">
                  </div>
                  <div class="form-group">
-                     <input type="text" placeholder="Enter your Phone No." class="form-control">
+                     <input type="text" placeholder="Enter your Phone No." name="phone" id="Contact" class="form-control">
                  </div>
                  <div class="form-group">
-                     <input type="text" placeholder="Note" class="form-control">
+                     <input type="text" placeholder="Note"  id="Note" name="note" class="form-control">
                  </div>
-                 <button type="button" class="btn">Send Enquiry</button>
+                 <button  class="btn" type="submit">Send Enquiry</button>
              </form>
          </div>
     </div>
@@ -793,7 +794,7 @@
                                 <p class="mb-0"> Shiv Complex, Block C, Ashok Nagar Extension, New Ashok Nagar, Delhi, 110096, India</p>
                             </div>
                             <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <i class="bi bi-envelope-open text-primary me-2"></i> 
                                 <p class="mb-0">info@technonexindia.com</p>
                             </div>
                             <div class="d-flex mb-2">
@@ -856,8 +857,11 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top" id="go-top-btn"><i class="bi bi-arrow-up"></i></a> -->
 
+    <button class="go-top-btn">
+        <i class="bi bi-arrow-up"></i>
+      </button>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -871,6 +875,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+  
+ 
 </body>
 
 </html>
